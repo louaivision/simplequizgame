@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soccer Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Jomhuria&family=Lalezar&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="start">
+    <div class="container">
+        <h1 class="title">Welcome To Soccer Quiz</h1>
+        <div class="start-buttons">
+            <button onclick="startGame()" class="start">Play</button>
+            <button onclick="openSettings()" class="settings">Settings</button>
+            <button onclick="openAbout()" class="about">Credits</button>
+        </div>
+    </div>
+    <audio id="click" src="10.mp3"></audio>
+    <audio id="hover" src="hover.wav"></audio>
+  <!-- settings -->
+<div id="settingsModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('settingsModal')">&times;</span>
+        <h2>Settings</h2>
+        <div class="settings-container">
+            <label class="settings-label" for="theme-toggle">Dark Mode </label>
+            <label class="switch">
+                <input type="checkbox" class="input__check" id="theme-toggle" onchange="toggleTheme()">
+                <span class="slider" onclick="playSwitchSound()"></span> <!-- Added onclick event to play sound -->
+            </label>
+        </div>
+    </div>
+</div>
+    <!-- Credits -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('aboutModal')">&times;</span>
+            <h2>Credits</h2>
+            <p>Made By Louai Amara. Follow me on Insta: louaivision</p>
+        </div>
+    </div>
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8284938083026547"
+     crossorigin="anonymous"></script>
+<!-- adsoccergame -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8284938083026547"
+     data-ad-slot="1865739995"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+	 </div>
+	 </div>
+	<div id="game">
+    <audio id="correctSound" src="correct.mp3"></audio>
+    <audio id="wrongSound" src="wrong.mp3"></audio>
+
+<!--game-->
+    <div class="container">
+        <h1 class="title">Soccer Quiz</h1>
+        <div id="question-container" class="question-container">
+            <p id="question-text" class="question-text">Question HERE</p>
+            <ul id="answers-list" class="answers-list">
+                <li><button class="answer-btn" onclick="checkAnswer(0)">ans1</button></li>
+                <li><button class="answer-btn" onclick="checkAnswer(1)">ans2</button></li>
+                <li><button class="answer-btn" onclick="checkAnswer(2)">ans3</button></li>
+                <li><button class="answer-btn" onclick="checkAnswer(3)">ans4</button></li>
+            </ul>
+        </div>
+        <button id="next-btn" class="next-btn" onclick="nextQuestion()">NEXT</button>
+        <div id="result" class="result"></div>
+    </div>
+	</div>
+
+
+
+    <script>
+           document.querySelectorAll('.start-buttons button').forEach(button => {
+        button.addEventListener('mouseover', () => {
+            document.getElementById('hover').play();
+        });
+    });
+
+    </script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<script src="start.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
